@@ -9,4 +9,6 @@ PRIVATE
 target_include_directories(fdir PUBLIC include)
 set_target_properties(fdir PROPERTIES CXX_STANDARD 20)
 
-add_subdirectory(tests)
+if (FDIR_BUILD_TESTS)
+    add_subdirectory(tests)
+endif ()
