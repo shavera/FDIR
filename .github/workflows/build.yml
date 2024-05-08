@@ -28,7 +28,8 @@ jobs:
           LLVM_PROFILE_FILE="fdir.profraw" ./build/fdir/tests/fdir_test
       - name: Merge counters from different runs and convert the result into an llvm-cov-compatible form
         run: |
-          llvm-profdata merge -o merged.profdata *.profraw
+          ls
+          llvm-profdata merge -o merged.profdata fdir.profraw
       - name: Collect the coverage
         run: |
           llvm-cov show --show-branches=count --instr-profile merged.profdata ./build/fdir/tests/fdir_test > coverage.txt
