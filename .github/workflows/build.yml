@@ -21,11 +21,11 @@ jobs:
       - name: Run build-wrapper
         run: |
           mkdir build
-          cmake -S . -B build -DFDIR_COVERAGE=ON -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo
-          build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} cmake --build build/
+          cmake --preset coverage
+          build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} cmake --build --preset coverage
       - name: Run tests to generate coverage information
         run: |
-          LLVM_PROFILE_FILE="fdir.profraw" ./build/fdir/tests/fdir_test
+          LLVM_PROFILE_FILE="fdir.profraw" ./build/coverage/fdir/tests/fdir_test
           ls
       - name: Merge counters from different runs and convert the result into an llvm-cov-compatible form
         run: |
