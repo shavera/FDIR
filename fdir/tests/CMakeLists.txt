@@ -14,5 +14,10 @@ PRIVATE
     GTest::gtest_main
 )
 
+if(FDIR_COVERAGE)
+    include(code-coverage)
+    target_code_coverage(fdir_test AUTO)
+endif()
+
 include(GoogleTest)
 gtest_discover_tests(fdir_test)

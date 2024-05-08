@@ -10,8 +10,11 @@ if(FDIR_BUILD_TESTS)
 endif()
 
 option(FDIR_COVERAGE "Add Code Coverage to build" OFF)
+set(CODE_COVERAGE ${FDIR_COVERAGE})
 
 ### Dependencies
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
+
 include(FetchContent)
 FetchContent_Declare(
         googletest
