@@ -9,6 +9,8 @@ if(FDIR_BUILD_TESTS)
     enable_testing()
 endif()
 
+option(FDIR_COVERAGE "Add Code Coverage to build" OFF)
+
 ### Dependencies
 include(FetchContent)
 FetchContent_Declare(
