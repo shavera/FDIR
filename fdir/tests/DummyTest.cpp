@@ -9,4 +9,10 @@ TEST(DummyTest, addNumbersTest){
   EXPECT_EQ(23, result);
 }
 
+TEST(DummyTest, doStuffTest){
+  // this is completely arbitrary but it extends coverage
+  DummyLib d{0};
+  d.doStuff();
+}
+
 } // anonymous nampesapce

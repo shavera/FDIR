@@ -15,6 +15,10 @@ set(CODE_COVERAGE ${FDIR_COVERAGE})
 ### Dependencies
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
 
+if (${FDIR_COVERAGE})
+    include(code-coverage)
+endif ()
+
 include(FetchContent)
 FetchContent_Declare(
         googletest

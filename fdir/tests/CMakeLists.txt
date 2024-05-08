@@ -15,7 +15,6 @@ PRIVATE
 )
 
 if(FDIR_COVERAGE)
-    include(code-coverage)
     target_code_coverage(fdir_test AUTO)
 endif()
 
