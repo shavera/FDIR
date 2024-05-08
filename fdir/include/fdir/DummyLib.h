@@ -2,6 +2,13 @@
 
 class DummyLib {
 public:
-  void doStuff();
+  explicit DummyLib(int x) : _x{x} {}
+
+  void doStuff() const;
+
+  int addNumbers(int a, int b) const;
+
+private:
+    int _x;
 };
 

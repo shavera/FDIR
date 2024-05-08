@@ -1,6 +1,6 @@
 #include "fdir/DummyLib.h"
 
 int main(){
-  DummyLib d;
+  DummyLib d{0};
   d.doStuff();
 }
