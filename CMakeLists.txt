@@ -3,18 +3,22 @@
 cmake_minimum_required(VERSION 3.12)
 project(FDIR)
 
-option(FDIR_BUILD_TESTS ON "Build unit tests for FDIR library")
+### Project Options and Flags
+option(FDIR_BUILD_TESTS "Build unit tests for FDIR library" ON)
 if(FDIR_BUILD_TESTS)
     enable_testing()
 endif()
 
-add_subdirectory(fdir)
-add_subdirectory(test_app)
-
 ### Dependencies
 include(FetchContent)
 FetchContent_Declare(
-    googletest
-    GIT_REPOSITORY https://github.com/google/googletest.git
-    GIT_TAG v1.14.0
+        googletest
+        GIT_REPOSITORY https://github.com/google/googletest.git
+        GIT_TAG v1.14.0
 )
+
+### Set up project
+add_subdirectory(fdir)
+add_subdirectory(test_app)
+
+

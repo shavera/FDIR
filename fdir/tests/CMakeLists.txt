@@ -1,3 +1,4 @@
+include(FetchContent)
 FetchContent_MakeAvailable(googletest)
 
 add_executable(fdir_test)
