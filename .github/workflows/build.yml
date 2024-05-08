@@ -26,6 +26,7 @@ jobs:
       - name: Run tests to generate coverage information
         run: |
           LLVM_PROFILE_FILE="fdir.profraw" ./build/fdir/tests/fdir_test
+          ls
       - name: Merge counters from different runs and convert the result into an llvm-cov-compatible form
         run: |
           ls
